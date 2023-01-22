@@ -40,17 +40,30 @@ ul {
 }
 
 button {
-  font-size: 20px;
+  font-size: 18px;
   font-family: inherit;
   padding: 0.5em 1.5em;
   text-transform: capitalize;
   color: #fff;
   border: none;
   background-color: hsl(71, 73%, 54%);
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: 0.5s;
 }
+
+button:hover {
+  background-color: hsl(71, 67%, 38%);
+  box-shadow: unset;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
 .card-container {
+  width: 85%;
   margin: auto;
   border-radius: 8px;
   overflow: hidden;
@@ -82,12 +95,14 @@ button {
 
 .primary-card p {
   color: hsl(218, 22%, 67%);
+  line-height: 24px;
 }
 
 /* SECONDARY CARD */
 
 .secondary-card {
   background-color: hsl(179, 62%, 43%);
+  align-items: flex-start;
 }
 
 .secondary-card h2 {
@@ -152,6 +167,7 @@ button {
 
   .secondary-card {
     grid-area: secondary;
+    align-items: stretch;
   }
 
   .tertiary-card {
