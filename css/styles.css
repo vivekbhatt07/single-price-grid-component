@@ -6,8 +6,155 @@
   --bold-weight: 700;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   font-family: var(--primary-font);
   font-size: 16px;
   font-weight: var(--regular-weight);
+  display: flex;
+  min-height: 100vh;
+}
+
+h1,
+h2 {
+  font-weight: var(--bold-weight);
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-size: 20px;
+  font-family: inherit;
+  padding: 0.5em 1.5em;
+  text-transform: capitalize;
+  color: #fff;
+  border: none;
+  background-color: hsl(71, 73%, 54%);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.card-container {
+  margin: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+}
+
+/* PRIMARY CARD */
+
+.primary-card {
+  background-color: #fff;
+}
+
+.primary-card h1 {
+  color: hsl(179, 62%, 43%);
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.primary-card h2 {
+  color: hsl(71, 73%, 54%);
+  margin-bottom: 10px;
+}
+
+.primary-card p {
+  color: hsl(218, 22%, 67%);
+}
+
+/* SECONDARY CARD */
+
+.secondary-card {
+  background-color: hsl(179, 62%, 43%);
+}
+
+.secondary-card h2 {
+  margin-bottom: 16px;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.secondary-card .card-price {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: hsl(204, 43%, 93%);
+  margin-bottom: 8px;
+}
+
+.secondary-card .card-price span {
+  font-size: 30px;
+  color: #fff;
+}
+
+.secondary-card .card-description {
+  color: hsl(204, 43%, 93%);
+  margin-bottom: 24px;
+}
+
+/* TERTIARY CARD */
+
+.tertiary-card {
+  background-color: hsl(179, 66%, 60%);
+}
+
+.tertiary-card h2 {
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-item {
+  color: hsl(204, 43%, 93%);
+  font-size: 14px;
+}
+
+@media (min-width: 780px) {
+  .card-container {
+    max-width: 620px;
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template-areas:
+      "primary primary"
+      "secondary tertiary";
+  }
+
+  .primary-card {
+    grid-area: primary;
+  }
+
+  .secondary-card {
+    grid-area: secondary;
+  }
+
+  .tertiary-card {
+    grid-area: tertiary;
+  }
 }
